@@ -1,0 +1,100 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.book.domain">
+
+	<class name="Book" table="t_Book">
+
+          <!-- 主键图书条形码 -->
+          <id name="barcode" type="string" length="200">
+            <generator class="assigned"/>
+          </id>
+
+          <!-- 简单字符串属性: 图书名称 -->
+          <property
+            name="bookName"
+            column="bookName"
+            type="string"
+            length="200"
+          />
+          
+           <!-- 简单字符串属性: 图书作者 -->
+          <property
+            name="author"
+            column="author"
+            type="string"
+            length="200"
+          />
+
+          <!-- 多对一属性: 图书所在类别 -->
+          <many-to-one name="bookType"
+            column="bookType"
+            class="BookType"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单浮点型属性: 图书价格 -->
+          <property
+            name="price"
+            column="price"
+            type="java.lang.Float"
+          />
+
+         <!-- 简单浮点型属性: 购买价格 -->
+          <property
+            name="buyPrice"
+            column="buyPrice"
+            type="java.lang.Float"
+          />
+          
+          <!-- 简单整型属性: 库存 -->
+          <property
+            name="count"
+            column="count"
+            type="java.lang.Integer"
+
+          />
+
+          <!-- 简单字符串属性: 出版社 -->
+          <property
+            name="publish"
+            column="publish"
+            type="string"
+            length="200"
+          />
+          
+          
+          <!-- 简单日期型属性: 出版日期 -->
+          <property
+            name="publishDate"
+            column="publishDate"
+            	type="string"
+            	length="100"
+          />
+          
+          <!-- 简单日期型属性: 出版日期 -->
+          <property
+            name="buyDate"
+            column="buyDate"
+            	type="string"
+            	length="100"
+          />
+
+          <!-- 简单图片属性: 图书图片 -->
+          <property
+            name="photoBook"
+            column="photoBook"
+            type="string"
+            length="500"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 
