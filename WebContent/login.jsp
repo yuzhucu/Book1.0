@@ -47,7 +47,7 @@ body {
             <td width="160" background="<%=basePath %>images/login_06.gif">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
-                <td width="50px" height="25"><div align="center"><span class="STYLE1">用户</span></div></td>
+                <td width="80px" height="25"><div align="center"><span class="STYLE1">用户</span></div></td>
                 <td width="80px" height="25"><div align="left">
                  <input type="text" name="username" class="STYLE2">
                   <sf:errors path="username" cssStyle="color:red" />
